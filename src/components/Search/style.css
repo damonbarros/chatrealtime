@@ -1,0 +1,23 @@
+.boxSearch{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iconSearch{
+    position: absolute;
+    right: 16px;
+}
+.inputSearch{
+    width: 95%;
+    height: 36px;
+    border-radius: 4px;
+    border: none;
+    background: #f1f1f1;
+    padding: 8px;
+    font-weight: 600;
+}
+.inputSearch:focus{
+    outline: none;
+}
