@@ -1,0 +1,49 @@
+.sectionChat{
+    height: 100vh;
+    flex: 1;
+    padding: 16px 24px;
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+}
+.nameUser{
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+
+.conteinerMessages {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    justify-content: start;
+    align-items: start;
+    overflow: auto;
+}
+
+.boxSendMessage {
+    width: 60%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.boxSendMessage > textarea {
+    flex: 1;
+    resize: none;
+    font-size: 1.1rem;
+    border: 2px solid gray;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.boxSendMessage > textarea:focus {
+    border: 2px solid gray;
+    outline: none;
+}
+
+.iconSendMessage {
+    color: #00BF33;
+}

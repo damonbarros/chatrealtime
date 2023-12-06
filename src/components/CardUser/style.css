@@ -13,15 +13,13 @@
 
 .boxUserCard {
     height: 80%;
-    aspect-ratio: 1/ 1;
-    border-radius: 50%;
-    background-color: black;
 }
 
 .boxUserCard > img {
     height: 100%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .contentCardUser {

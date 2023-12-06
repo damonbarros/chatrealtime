@@ -1,4 +1,4 @@
-import { LogOut, Search } from "lucide-react";
+import { LogOut } from "lucide-react";
 
 import './style.css'
 

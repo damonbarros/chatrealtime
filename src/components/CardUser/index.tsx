@@ -1,6 +1,12 @@
 import "./style.css";
 
-export default function CardUser({ image }: { image: string }) {
+export type PropsCardUser = {
+  image: string,
+  name: string,
+  lastMessage: string
+}
+
+export default function CardUser({ image, name, lastMessage }: PropsCardUser) {
   return (
     <div className="conteinerCardUser">
         
@@ -9,8 +15,8 @@ export default function CardUser({ image }: { image: string }) {
       </div>
 
       <div className="contentCardUser">
-        <strong>Neymar</strong>
-        <small>Vc é lindo</small>
+        <strong>{name}</strong>
+        <small>{lastMessage}</small>
       </div>
     </div>
   );
