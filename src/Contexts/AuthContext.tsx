@@ -7,6 +7,7 @@ export const AuthContext = createContext({});
 
 function AuthProvider({ children } : { children: ReactNode }) {
     const [user, setUser] = useState({})
+    const [loading, setLoading] = useState(false)
     const [token, setToken] = useState<string | null>(null)
 
     async function logout() {
@@ -20,6 +21,7 @@ function AuthProvider({ children } : { children: ReactNode }) {
     
     async function SignInGoogle() {
         try {
+            setLoading(true)
             const provider = new GoogleAuthProvider();
             const result = await signInWithPopup(auth, provider)
             const token = await result.user.getIdToken()
@@ -35,12 +37,14 @@ function AuthProvider({ children } : { children: ReactNode }) {
             Cookies.set('token', token, { expires: 30 })   
             Cookies.set('user', JSON.stringify(data), { expires: 30 })
         } catch (error) {
+            console.log(error)
             throw new Error()
+        } finally {
+            setLoading(false)
         }
     }
 
     useEffect(() => {
-        console.log("a")
         const dataUser = Cookies.get('user')
         const tokenCookie = Cookies.get('token')
 
@@ -54,7 +58,7 @@ function AuthProvider({ children } : { children: ReactNode }) {
     }, [])
   
     return (
-      <AuthContext.Provider value={{ SignInGoogle, user, token }}>
+      <AuthContext.Provider value={{ SignInGoogle, user, token, loading }}>
         {children}
       </AuthContext.Provider>
     );
