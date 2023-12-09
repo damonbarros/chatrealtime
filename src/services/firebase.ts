@@ -12,13 +12,12 @@ import { getAuth } from "firebase/auth";
 }; */
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA5dd4TYvyaBRP7_XrR_j_A9KPAW9sntDg",
-  authDomain: "realtime-chat-c237c.firebaseapp.com",
-  projectId: "realtime-chat-c237c",
-  storageBucket: "realtime-chat-c237c.appspot.com",
-  messagingSenderId: "262869784308",
-  appId: "1:262869784308:web:45d5932dfdee980ad270a1",
-  measurementId: "G-V937TPR1CH"
+  apiKey: "AIzaSyD-IdHhMkiHSsNClH2he_g9UD8tlEBYYfU",
+  authDomain: "chatrealtime-b6c84.firebaseapp.com",
+  projectId: "chatrealtime-b6c84",
+  storageBucket: "chatrealtime-b6c84.appspot.com",
+  messagingSenderId: "452743780874",
+  appId: "1:452743780874:web:dbf36a4ed217efd609ddf3"
 };
 
 const app = initializeApp(firebaseConfig);

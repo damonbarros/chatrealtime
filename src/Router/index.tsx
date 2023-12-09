@@ -16,12 +16,12 @@ export default function Router() {
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>} />
           <Route path=":id" element={<Chat/>} />
+          <Route path="*" element={<Navigate replace to="/" />} />
         </Route>
         ) : (
           <Route path="/" element={<Login/>} />
         )
       }
-      <Route path="*" element={<Navigate replace to="/" />} />
     </Routes>
   );
 }
