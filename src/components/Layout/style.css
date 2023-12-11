@@ -1,0 +1,5 @@
+.mainLayout {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+}

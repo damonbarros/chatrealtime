@@ -1,0 +1,28 @@
+.conteinerCardUser {
+    height: 65px;
+    width: 95%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 4px 8px;
+    border-radius: 8px;
+    gap: 8px;
+}
+
+.boxUserCard {
+    height: 80%;
+}
+
+.boxUserCard > img {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contentCardUser {
+    display: flex;
+    flex-flow: column;
+}
