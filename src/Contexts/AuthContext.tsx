@@ -14,7 +14,6 @@ function AuthProvider({ children } : { children: ReactNode }) {
 
 
     async function logout() {
-        console.log("abc");
         try {
 
             Cookies.remove('token');
