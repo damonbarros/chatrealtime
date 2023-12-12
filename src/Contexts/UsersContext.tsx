@@ -1,30 +1,35 @@
 import { useState, createContext, useEffect, ReactNode } from "react";
 import { api } from "../services/api";
 
-
 export const UsersContext = createContext({});
 
 function UsersProvider({ children } : { children: ReactNode }) {
 
-  const [loading, setLoading] = useState(false)
-  const [users, setUsers] = useState<any[]>([])
+  const [loading, setLoading] = useState(false);
+  const [users, setUsers] = useState<any[]>([]);
   
   async function getUsers() {
     try {
-        setLoading(true)
-        const { data } = await api.get('/users')
 
-        setUsers(data)
-        
+        setLoading(true);
+        const { data } = await api.get('/users');
+        setUsers(data);
+
     } catch (error) {
-        console.log(error)
+
+        console.log(error);
+
     } finally {
-      setLoading(false)
+
+      setLoading(false);
+
     }
 }
 
 useEffect(() => {
-    getUsers()
+
+    getUsers();
+
 }, [])
   
   return (

@@ -15,7 +15,7 @@ export default function Router() {
         token ? (
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>} />
-          <Route path=":id" element={<Chat/>} />
+          <Route path="/:id" element={<Chat/>} />
           <Route path="*" element={<Navigate replace to="/" />} />
         </Route>
         ) : (

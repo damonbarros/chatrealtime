@@ -1,12 +1,14 @@
 import "./style.css"
 
-export default function CardChat({ who }: { who: string }) {
+export default function CardChat({ who, message, image, date }: { who: string, message: string, image: string, date: string }) {
     let styleConteiner: any;
     let styleBoxContent: any;
+    let styleConteinerContext: any;
 
     if(who == "i") {
         styleConteiner = {
-            flexFlow: "row"
+            flexFlow: "row",
+            justifyContent: "end"
         }
         styleBoxContent = {
             backgroundColor: "#00BF33",
@@ -14,21 +16,28 @@ export default function CardChat({ who }: { who: string }) {
         }
     } else if (who == "you") {
         styleConteiner = {
-            flexFlow: "row-reverse"
+            flexFlow: "row-reverse",
+            justifyContent: "start"
         }
         styleBoxContent = {
             backgroundColor: "#fff",
             color: "gray"
         }
+        styleConteinerContext = {
+            alignItems: "start"
+        }
     }
     
     return (
         <div className="conteinerCardChat" style={styleConteiner}>
-            <div className="boxContent" style={styleBoxContent}>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eos distinctio eius nobis doloremque cumque, eligendi ut! Illo ut nisi tenetur eligendi reiciendis deserunt explicabo, fugit laboriosam ab sequi dolores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus id labore tempore obcaecati reiciendis veritatis consectetur autem eligendi error fugiat vero, facere ex exercitationem quasi asperiores eveniet ab sed laboriosam.</p>
+            <div className="conteinerContext" style={styleConteinerContext}>
+                <div className="boxContent" style={styleBoxContent}>
+                    <p>{message}</p>
+                </div>
+                <small className="date">{date}</small>
             </div>
             <div className="boxImgUserChat">
-                <img className="imgUserChat" src="https://classic.exame.com/wp-content/uploads/2022/12/GettyImages-1245478207.jpg" alt="" />
+                <img className="imgUserChat" src={image} alt="" />
             </div>
         </div>
     )
